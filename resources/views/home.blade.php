@@ -8,7 +8,13 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    @if(Auth::user()->hasRole('Admin'))
+                        <div class="">AdminQAQ</div>
+                    @elseif(Auth::user()->hasRole('Author'))
+                        <div class="">AuthorXDD</div>
+                    @elseif(Auth::user()->hasRole('User'))
+                        <div class="">User0.0.</div>
+                    @endif
                 </div>
             </div>
         </div>
